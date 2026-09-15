@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital | Instalaciones Álvarez</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/tarjeta.css">
+</head>
+<body>
+
+    <div class="app-card-wrapper">
+        <!-- LOGO SUPERIOR Y DATOS -->
+        <header class="profile-section">
+            <div class="logo-box">
+                <img src="images/logo.png" alt="Instalaciones Álvarez" class="profile-logo">
+            </div>
+            <h1 class="profile-name">Jairo Álvarez</h1>
+            <p class="profile-badge">Instalador Autorizado</p>
+        </header>
+
+        <!-- ACCIONES CIRCULARES (ORDEN: LLAMAR - WHATSAPP - TELEGRAM - MAIL) -->
+        <section class="quick-actions">
+            <a href="tel:+34676995075" class="action-item">
+                <div class="icon-circle"><i data-lucide="phone"></i></div>
+                <span>Llamar</span>
+            </a>
+            <a href="https://wa.me/34676995075" target="_blank" class="action-item">
+                <div class="icon-circle whatsapp"><i data-lucide="message-circle"></i></div>
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://t.me/+34676995075" target="_blank" rel="noopener noreferrer" class="action-item">
+                <div class="icon-circle telegram"><i data-lucide="send"></i></div>
+                <span>Telegram</span>
+            </a>
+            <a href="mailto:info@instalacionesalvarez.com" class="action-item">
+                <div class="icon-circle"><i data-lucide="mail"></i></div>
+                <span>Mail</span>
+            </a>
+        </section>
+
+        <!-- BOTONES INFERIORES -->
+        <section class="grid-menu">
+            <a href="index.html" class="grid-card">
+                <i data-lucide="globe"></i>
+                <span>Pagina Web de Electric-A</span>
+            </a>
+            <a href="contacto.vcf" download class="grid-card highlight double-height">
+                <i data-lucide="user-plus"></i>
+                <span>Guardar contacto</span>
+            </a>
+        </section>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

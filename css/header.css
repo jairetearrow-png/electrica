@@ -1,0 +1,221 @@
+/* ==========================================================================
+   HEADER & NAVEGACIÓN
+   ========================================================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem 0;
+    /* Transición fluida para todo el contenedor */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-header.scrolled {
+    padding: 0.75rem 0;
+    background-color: rgba(9, 13, 22, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO PRINCIPAL (170px -> 100px) */
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo {
+    height: 170px; /* Tamaño solicitado por defecto */
+    width: auto;
+    object-fit: contain;
+    /* Transición suave para el cambio de tamaño */
+    transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
+    will-change: height;
+}
+
+/* TAMAÑO EN SCROLL */
+.site-header.scrolled .brand-logo {
+    height: 100px; /* Tamaño solicitado al hacer scroll */
+}
+
+.brand-logo:hover {
+    transform: scale(1.02);
+}
+
+/* NAVEGACIÓN DESKTOP */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color, #38bdf8);
+    border-radius: 2px;
+}
+
+/* BOTÓN CTA HEADER */
+.header-cta {
+    padding: 0.65rem 1.25rem;
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--primary-color, #38bdf8);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.header-cta:hover {
+    background-color: var(--primary-color, #38bdf8);
+    color: #090d16;
+}
+
+/* BOTÓN MÓVIL */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* MENÚ MÓVIL DESPLEGABLE */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface-color, #1e293b);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.mobile-nav-link {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.mobile-nav-cta {
+    display: inline-block;
+    text-align: center;
+    padding: 0.85rem;
+    background-color: var(--primary-color, #38bdf8);
+    color: #090d16;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+/* ESTILOS PARA ISOTIPO */
+.card-brand-icon {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(56, 189, 248, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.card-brand-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.highlight-logo-symbol {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-logo-symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo-symbol {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ADAPTACIÓN MÓVIL */
+@media (max-width: 868px) {
+    .main-nav,
+    .header-cta {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .brand-logo {
+        height: 110px;
+    }
+
+    .site-header.scrolled .brand-logo {
+        height: 80px;
+    }
+}

@@ -1,0 +1,260 @@
+/* ==========================================================================
+   SECCIÓN HERO Y TARJETAS FLOTANTES (ELECTRIC-A)
+   ========================================================================== */
+
+.hero-section {
+    position: relative;
+    padding: 260px 0 100px 0 !important;
+    overflow: hidden;
+    background-color: var(--bg-dark, #0b0f19);
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* --- CONTENIDO IZQUIERDO --- */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color, #c6d800);
+    letter-spacing: 0.05em;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color, #c6d800);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-color, #c6d800);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.hero-speciality {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color, #0072ce);
+}
+
+.hero-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* --- ESTILO DE BOTONES DINÁMICOS --- */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* Reposo: Azul más oscuro, sin neón */
+.hero-buttons .btn,
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary,
+.hero-buttons a {
+    background-color: #005bb5 !important; /* Azul más oscuro */
+    color: #ffffff !important;
+    border: 1px solid rgba(0, 91, 181, 0.8) !important;
+    border-radius: 8px;
+    padding: 0.8rem 1.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: none !important; /* Sin neón en reposo */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+}
+
+/* Hover: Mismo color azul, movimiento dinámico y encendido de neón azul */
+.hero-buttons .btn:hover,
+.hero-buttons .btn-primary:hover,
+.hero-buttons .btn-secondary:hover,
+.hero-buttons a:hover {
+    background-color: #005bb5 !important; /* Conserva el azul oscuro */
+    color: #ffffff !important;
+    border-color: #0072ce !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 0 20px rgba(0, 114, 206, 0.7) !important; /* Neón Azul */
+}
+
+.hero-trust {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: #cbd5e1;
+}
+
+/* --- BLOQUE DERECHO: TARJETAS --- */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.hero-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 440px;
+}
+
+/* --- ESTILO DE CADA TARJETA --- */
+.hero-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    cursor: default;
+    user-select: none;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.hero-card *, 
+.hero-card h4, 
+.hero-card p {
+    cursor: default;
+    user-select: none;
+}
+
+/* --- EFECTO DE LUZ LED EN TARJETAS --- */
+.hero-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color, #c6d800);
+    box-shadow: 0 0 20px rgba(198, 216, 0, 0.35),
+                0 0 40px rgba(198, 216, 0, 0.15);
+}
+
+/* Icono dentro de la tarjeta */
+.hero-card .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: rgba(0, 114, 206, 0.15);
+    border-radius: 12px;
+    color: var(--primary-color, #0072ce);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Encendido LED del icono al pasar el ratón */
+.hero-card:hover .card-icon {
+    background: var(--accent-color, #c6d800);
+    color: #0b0f19;
+    box-shadow: 0 0 12px var(--accent-color, #c6d800);
+}
+
+.hero-card h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.hero-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+/* RESPONSIVE MÓVIL Y TABLET */
+@media (max-width: 992px) {
+    .hero-section {
+        padding-top: 200px !important;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+/* --- ESTILO DE BOTONES DINÁMICOS --- */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+/* Reposo: Azul oscuro, borde suave, sin neón */
+.hero-buttons .btn,
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary,
+.hero-buttons a {
+    background-color: #005bb5 !important; /* Azul oscuro */
+    color: #ffffff !important;
+    border: 1px solid rgba(0, 114, 206, 0.4) !important;
+    border-radius: 8px;
+    padding: 0.8rem 1.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: none !important; /* Sin neón en reposo */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer;
+}
+
+/* Hover: Mismo tono de fondo, elevación, borde azul eléctrico vivo y resplandor neón azul intenso */
+.hero-buttons .btn:hover,
+.hero-buttons .btn-primary:hover,
+.hero-buttons .btn-secondary:hover,
+.hero-buttons a:hover {
+    background-color: #005bb5 !important;
+    color: #ffffff !important;
+    border-color: #0088ff !important; /* Borde azul muy intenso y brillante */
+    transform: translateY(-3px) !important;
+    
+    /* Resplandor Neón Azul Intenso */
+    box-shadow: 0 0 15px rgba(0, 136, 255, 0.8),
+                0 0 30px rgba(0, 114, 206, 0.5) !important;
+}
