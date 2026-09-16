@@ -68,10 +68,10 @@ body {
 }
 
 .profile-logo {
-    width: 120%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 360px;
     height: auto;
-    max-height: 200px;
+    max-height: 220px;
     object-fit: contain;
     display: block;
 }
