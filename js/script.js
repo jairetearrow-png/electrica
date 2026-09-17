@@ -53,8 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.addEventListener('scroll', handleHeaderScroll);
-
     // 4. DESTACAR ENLACE ACTIVO SEGÚN LA SECCIÓN EN PANTALLA
     const highlightActiveNav = () => {
         const scrollPosition = window.scrollY + 200;
@@ -75,18 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    window.addEventListener('scroll', highlightActiveNav);
+    // Evento scroll optimizado con requestAnimationFrame
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleHeaderScroll();
+                highlightActiveNav();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
 
-    // 5. VALIDACIÓN BÁSICA Y ENVÍO DEL FORMULARIO DE CONTACTO
-    const contactForm = document.querySelector('.contact-form');
+    // 5. VALIDACIÓN BÁSICA Y ENVÍO DEL FORMULARIO DE PRESUPUESTO
+    const budgetForm = document.querySelector('.budget-form');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    if (budgetForm) {
+        budgetForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
             // Aquí se conectará la lógica de envío (Backend o servicios como Formspree / EmailJS)
             alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.');
-            contactForm.reset();
+            budgetForm.reset();
         });
     }
 });

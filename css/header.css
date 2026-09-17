@@ -1,36 +1,132 @@
 /* ==========================================================================
-   HEADER & NAVEGACIÓN
+   INSTALACIONES ÁLVAREZ
+   HEADER.CSS (DEPURADO)
    ========================================================================== */
+
+/* =========================================================
+   CONTENEDOR DEL HEADER Y NAVEGACIÓN
+   ========================================================= */
+
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(9, 13, 22, 0.85);
+    background-color: rgba(11, 15, 25, 0.85);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 1.5rem 0;
-    /* Transición fluida para todo el contenedor */
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 1.25rem 0;
+    transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: padding;
 }
 
 .site-header.scrolled {
-    padding: 0.75rem 0;
-    background-color: rgba(9, 13, 22, 0.95);
+    padding: 0.6rem 0;
+    background-color: rgba(11, 15, 25, 0.95);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+/* ==========================================================================
+   CABECERA Y NAVEGACIÓN (CENTRADO VERTICAL ABSOLUTO Y LOGO GRANDE)
+   ========================================================================== */
+
+/* Cabecera principal */
+.site-header {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-/* LOGO PRINCIPAL (170px -> 100px) */
+/* Contenedor principal */
+.header-container {
+    display: flex;
+    align-items: center;        /* Centra verticalmente todos los elementos */
+    justify-content: flex-start; /* Todo alineado a la izquierda */
+    gap: 40px;                  /* Distancia entre el logo y el menú */
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* 1. Logo */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    flex-shrink: 0;             /* Evita que el logo cambie de tamaño */
+}
+
+.brand-logo {
+    display: block;
+    height: 65px;               /* Tamaño del logo */
+    width: auto;
+    object-fit: contain;
+}
+
+/* 2. Navegación Desktop - Centrado absoluto en altura */
+.main-nav {
+    display: flex;
+    align-items: center;        /* Centra los botones verticalmente */
+    align-self: center;         /* Fuerza a la navegación a centrarse respecto al logo */
+    height: 100%;
+    margin: 0;
+    margin-right: auto;        /* Empuja el menú móvil al final */
+    padding: 0;
+}
+
+/* 3. Enlaces del menú */
+.main-nav .nav-link {
+    display: inline-flex;
+    align-items: center;        /* Centra el texto dentro del botón */
+    justify-content: center;
+    height: 40px;               /* Altura fija para centrado perfecto */
+    padding: 0 14px;            /* Espacio horizontal */
+    margin: 0;
+    line-height: 1;             /* Elimina el desfase vertical de la fuente */
+    position: relative;
+    color: var(--color-text-muted, #718496);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+}
+
+/* Estados al pasar el ratón y activo */
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+    color: #ffffff;
+}
+
+/* Indicador amarillo inferior */
+.main-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;                  /* Se coloca en la base exacta del enlace */
+    left: 14px;
+    right: 14px;
+    height: 3px;
+    background-color: var(--color-yellow, #cccc00);
+    border-radius: 2px;
+}
+
+/* 4. Botón Menú Móvil */
+.mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-left: auto;
+}
+
+/* =========================================================
+   LOGOTIPO
+   ========================================================= */
+
 .brand {
     display: flex;
     align-items: center;
@@ -38,24 +134,25 @@
 }
 
 .brand-logo {
-    height: 170px; /* Tamaño solicitado por defecto */
+    height: 140px;
     width: auto;
     object-fit: contain;
-    /* Transición suave para el cambio de tamaño */
     transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
     will-change: height;
 }
 
-/* TAMAÑO EN SCROLL */
 .site-header.scrolled .brand-logo {
-    height: 100px; /* Tamaño solicitado al hacer scroll */
+    height: 90px;
 }
 
 .brand-logo:hover {
     transform: scale(1.02);
 }
 
-/* NAVEGACIÓN DESKTOP */
+/* =========================================================
+   NAVEGACIÓN ESCRITORIO
+   ========================================================= */
+
 .main-nav {
     display: flex;
     align-items: center;
@@ -63,18 +160,17 @@
 }
 
 .nav-link {
-    color: var(--text-muted, #94a3b8);
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
+    color: var(--color-text-secondary, #94a3b8);
+    font-size: var(--text-base, 1.125rem);
+    font-weight: 800;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: #ffffff;
+    color: var(--color-white, #ffffff);
 }
 
 .nav-link.active::after {
@@ -84,48 +180,51 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary-color, #38bdf8);
-    border-radius: 2px;
+    background-color: var(--color-gold, var(--accent-yellow, #c8ff00));
+    border-radius: var(--radius-pill, 9999px);
 }
 
-/* BOTÓN CTA HEADER */
+/* BOTÓN CTA EN HEADER */
+
 .header-cta {
     padding: 0.65rem 1.25rem;
+    color: var(--color-blue, #38bdf8);
     background-color: rgba(56, 189, 248, 0.1);
-    color: var(--primary-color, #38bdf8);
     border: 1px solid rgba(56, 189, 248, 0.3);
-    border-radius: 8px;
-    font-size: 0.875rem;
+    border-radius: var(--radius-md, 8px);
+    font-size: var(--text-sm, 0.875rem);
     font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .header-cta:hover {
-    background-color: var(--primary-color, #38bdf8);
-    color: #090d16;
+    color: var(--color-navy, #0b0f19);
+    background-color: var(--color-blue, #38bdf8);
+    border-color: var(--color-blue, #38bdf8);
 }
 
-/* BOTÓN MÓVIL */
+/* =========================================================
+   MENÚ Y BOTÓN MÓVIL
+   ========================================================= */
+
 .mobile-menu-button {
     display: none;
+    padding: 0.5rem;
+    color: var(--color-white, #ffffff);
     background: none;
     border: none;
-    color: #ffffff;
     cursor: pointer;
-    padding: 0.5rem;
 }
 
-/* MENÚ MÓVIL DESPLEGABLE */
 .mobile-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--surface-color, #1e293b);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.5rem;
+    background-color: var(--color-navy, #0b0f19);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
@@ -140,67 +239,26 @@
 }
 
 .mobile-nav-link {
-    color: #ffffff;
+    color: var(--color-white, #ffffff);
     font-size: 1.1rem;
     font-weight: 600;
-    text-decoration: none;
 }
 
 .mobile-nav-cta {
     display: inline-block;
-    text-align: center;
-    padding: 0.85rem;
-    background-color: var(--primary-color, #38bdf8);
-    color: #090d16;
-    font-weight: 700;
-    border-radius: 8px;
-    text-decoration: none;
     margin-top: 0.5rem;
+    padding: 0.85rem;
+    color: var(--color-navy, #0b0f19);
+    background-color: var(--color-gold, var(--accent-yellow, #c8ff00));
+    border-radius: var(--radius-md, 8px);
+    font-weight: 700;
+    text-align: center;
 }
 
-/* ESTILOS PARA ISOTIPO */
-.card-brand-icon {
-    width: 44px;
-    height: 44px;
-    background-color: rgba(56, 189, 248, 0.1);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px;
-}
+/* =========================================================
+   ADAPTACIÓN MÓVIL (MEDIA QUERIES)
+   ========================================================= */
 
-.card-brand-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.highlight-logo-symbol {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
-}
-
-.highlight-logo-symbol img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.footer-logo-symbol {
-    height: 32px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* ADAPTACIÓN MÓVIL */
 @media (max-width: 868px) {
     .main-nav,
     .header-cta {
@@ -212,10 +270,10 @@
     }
 
     .brand-logo {
-        height: 110px;
+        height: 100px;
     }
 
     .site-header.scrolled .brand-logo {
-        height: 80px;
+        height: 75px;
     }
 }

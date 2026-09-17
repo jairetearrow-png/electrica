@@ -1,8 +1,7 @@
 /* =========================================================
    INSTALACIONES ÁLVAREZ
-   BASE.CSS
+   BASE.CSS (DEPURADO)
    ========================================================= */
-
 
 /* =========================================================
    RESET
@@ -16,9 +15,8 @@
     padding: 0;
 }
 
-
 /* =========================================================
-   HTML
+   HTML & BODY
    ========================================================= */
 
 html {
@@ -26,31 +24,18 @@ html {
     scroll-padding-top: 90px;
 }
 
-
-/* =========================================================
-   BODY
-   ========================================================= */
-
 body {
     min-height: 100vh;
-
     font-family: var(--font-body);
-
     font-size: var(--text-base);
     font-weight: 400;
-
     line-height: 1.6;
-
     color: var(--color-text);
-
     background-color: var(--color-background);
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
     overflow-x: hidden;
 }
-
 
 /* =========================================================
    ELEMENTOS GENERALES
@@ -58,18 +43,14 @@ body {
 
 img {
     display: block;
-
     max-width: 100%;
     height: auto;
 }
 
-
 a {
     color: inherit;
-
     text-decoration: none;
 }
-
 
 button,
 input,
@@ -78,59 +59,45 @@ select {
     font: inherit;
 }
 
-
 button {
     border: 0;
-
     cursor: pointer;
 }
-
 
 ul,
 ol {
     list-style: none;
 }
 
-
 /* =========================================================
    SELECCIÓN DE TEXTO
    ========================================================= */
 
 ::selection {
-    color: var(--color-white);
-
-    background-color: var(--color-navy);
+    color: var(--color-white, #ffffff);
+    background-color: var(--color-navy, #0b0f19);
 }
 
-
 /* =========================================================
-   CONTAINER
+   CONTAINER & SECCIONES
    ========================================================= */
 
 .container {
     width: min(
-        calc(100% - (var(--container-padding) * 2)),
-        var(--container-width)
+        calc(100% - (var(--container-padding, 20px) * 2)),
+        var(--container-width, 1200px)
     );
-
     margin-inline: auto;
 }
 
-
-/* =========================================================
-   SECCIONES
-   ========================================================= */
-
 .section {
     position: relative;
-
-    padding-top: var(--section-padding);
-    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding, 80px);
+    padding-bottom: var(--section-padding, 80px);
 }
 
-
 /* =========================================================
-   TÍTULOS
+   TÍTULOS Y TIPOGRAFÍA
    ========================================================= */
 
 h1,
@@ -140,97 +107,78 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-
     color: var(--color-text);
-
     line-height: 1.1;
-
     letter-spacing: -0.035em;
 }
 
-
 h1 {
     font-size: var(--text-6xl);
-
     font-weight: 800;
 }
-
 
 h2 {
     font-size: var(--text-4xl);
-
     font-weight: 800;
 }
 
-
 h3 {
     font-size: var(--text-2xl);
-
     font-weight: 700;
 }
-
 
 p {
     color: var(--color-text-secondary);
 }
 
-
 /* =========================================================
-   TEXTO DE SECCIÓN
+   CABECERAS DE SECCIÓN (ALINEADAS A LA IZQUIERDA)
    ========================================================= */
 
 .section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     max-width: 760px;
-
     margin-bottom: 56px;
+    margin-left: 0;
+    margin-right: auto;
 }
 
-
 .section-heading h2 {
+    text-align: left;
     max-width: 700px;
-
     margin-top: 12px;
 }
 
-
 .section-heading > p {
+    text-align: left;
     max-width: 650px;
-
     margin-top: 20px;
-
     font-size: var(--text-lg);
-
     line-height: 1.75;
 }
-
 
 .section-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    color: var(--color-gold);
-
+    color: var(--color-gold, var(--accent-yellow, #cccc00));
     font-size: var(--text-sm);
     font-weight: 700;
-
     letter-spacing: 0.16em;
-
     text-transform: uppercase;
+    text-align: left;
 }
-
 
 .section-eyebrow::before {
     content: "";
-
     display: block;
-
     width: 28px;
     height: 2px;
-
-    background-color: var(--color-gold);
+    background-color: var(--color-gold, var(--accent-yellow, #cccc00));
 }
-
 
 /* =========================================================
    BOTONES
@@ -238,94 +186,64 @@ p {
 
 .button {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 12px;
-
-    min-height: var(--button-height);
-
-    padding:
-        0
-        var(--button-padding-x);
-
-    border-radius: var(--radius-md);
-
+    min-height: var(--button-height, 48px);
+    padding: 0 var(--button-padding-x, 24px);
+    border-radius: var(--radius-md, 8px);
     font-size: var(--text-base);
     font-weight: 700;
-
     line-height: 1;
-
     transition:
-        transform var(--transition),
-        background-color var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        box-shadow var(--transition);
+        transform var(--transition, 0.3s ease),
+        background-color var(--transition, 0.3s ease),
+        color var(--transition, 0.3s ease),
+        border-color var(--transition, 0.3s ease),
+        box-shadow var(--transition, 0.3s ease);
 }
-
 
 .button svg {
     width: 18px;
     height: 18px;
-
     flex-shrink: 0;
 }
-
 
 .button:hover {
     transform: translateY(-2px);
 }
 
-
 .button:active {
     transform: translateY(0);
 }
 
-
 /* BOTÓN PRINCIPAL */
-
 .button-primary {
     color: var(--color-white);
-
     background-color: var(--color-navy);
-
-    box-shadow:
-        0 12px 24px rgba(11, 31, 51, 0.14);
+    box-shadow: 0 12px 24px rgba(11, 31, 51, 0.14);
 }
-
 
 .button-primary:hover {
     background-color: var(--color-navy-light);
-
-    box-shadow:
-        0 16px 30px rgba(11, 31, 51, 0.18);
+    box-shadow: 0 16px 30px rgba(11, 31, 51, 0.18);
 }
 
-
 /* BOTÓN SECUNDARIO */
-
 .button-secondary {
     color: var(--color-navy);
-
     background-color: var(--color-white);
-
     border: 1px solid var(--color-navy);
-
     box-shadow: var(--shadow-sm);
 }
 
-
 .button-secondary:hover {
     color: var(--color-white);
-
     background-color: var(--color-navy);
 }
 
-
 /* =========================================================
-   FOCUS
+   FOCUS & FORMULARIOS
    ========================================================= */
 
 a:focus-visible,
@@ -334,52 +252,34 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
     outline: 3px solid rgba(21, 159, 194, 0.35);
-
     outline-offset: 3px;
 }
-
-
-/* =========================================================
-   FORMULARIOS
-   ========================================================= */
 
 input,
 textarea,
 select {
     width: 100%;
-
     color: var(--color-text);
-
     background-color: var(--color-white);
-
     border: 1px solid var(--color-border);
-
     border-radius: var(--radius-md);
-
     outline: none;
-
     transition:
-        border-color var(--transition),
-        box-shadow var(--transition);
+        border-color var(--transition, 0.3s ease),
+        box-shadow var(--transition, 0.3s ease);
 }
-
 
 input:focus,
 textarea:focus,
 select:focus {
     border-color: var(--color-blue);
-
-    box-shadow:
-        0 0 0 4px rgba(21, 159, 194, 0.08);
+    box-shadow: 0 0 0 4px rgba(21, 159, 194, 0.08);
 }
-
 
 textarea {
     resize: vertical;
-
     min-height: 130px;
 }
-
 
 /* =========================================================
    SCROLLBAR
@@ -389,23 +289,18 @@ textarea {
     width: 9px;
 }
 
-
 ::-webkit-scrollbar-track {
     background: var(--color-background);
 }
 
-
 ::-webkit-scrollbar-thumb {
     background: #c7d2da;
-
     border-radius: var(--radius-pill);
 }
-
 
 ::-webkit-scrollbar-thumb:hover {
     background: #aab9c3;
 }
-
 
 /* =========================================================
    UTILIDADES
@@ -415,149 +310,106 @@ textarea {
     text-align: center;
 }
 
+.text-yellow {
+    color: var(--color-gold, var(--accent-yellow, #cccc00)) !important;
+}
 
 .hidden {
     display: none !important;
 }
-
 
 /* =========================================================
    ANIMACIONES
    ========================================================= */
 
 @keyframes fadeUp {
-
     from {
         opacity: 0;
-
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
 
-
 @keyframes fadeIn {
-
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
-
 }
 
-
 @keyframes pulse {
-
     0%,
     100% {
         opacity: 1;
-
         transform: scale(1);
     }
-
     50% {
         opacity: 0.65;
-
         transform: scale(1.08);
     }
-
 }
 
-
 /* =========================================================
-   TABLET
+   RESPONSIVE / MEDIA QUERIES
    ========================================================= */
 
 @media (max-width: 1024px) {
-
     h1 {
         font-size: var(--text-5xl);
     }
-
 
     h2 {
         font-size: var(--text-3xl);
     }
 
-
     .section-heading {
         margin-bottom: 44px;
     }
-
 }
 
-
-/* =========================================================
-   MÓVIL
-   ========================================================= */
-
 @media (max-width: 767px) {
-
     html {
         scroll-padding-top: 76px;
     }
-
 
     body {
         font-size: 0.95rem;
     }
 
-
     h1 {
         font-size: var(--text-4xl);
-
         letter-spacing: -0.04em;
     }
-
 
     h2 {
         font-size: var(--text-3xl);
     }
 
-
     h3 {
         font-size: var(--text-xl);
     }
-
-
-    .section {
-        padding-top: var(--section-padding);
-        padding-bottom: var(--section-padding);
-    }
-
 
     .section-heading {
         margin-bottom: 36px;
     }
 
-
     .section-heading > p {
         font-size: var(--text-base);
-
         line-height: 1.7;
     }
 
-
     .button {
         width: 100%;
-
         padding-inline: 20px;
     }
 
-
     .section-eyebrow {
         font-size: 0.72rem;
-
         letter-spacing: 0.13em;
     }
-
 }
