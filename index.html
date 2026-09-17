@@ -23,6 +23,52 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/hero.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/servicios.css">
+
+
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "Instalaciones Álvarez",
+  "image": "https://www.instalacionesalvarez.com/images/logo.png",
+  "@id": "https://www.instalacionesalvarez.com/#electrician",
+  "url": "https://www.instalacionesalvarez.com",
+  "telephone": "+34676995075",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Talavera de la Reina",
+    "addressRegion": "Toledo",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 39.9613,
+    "longitude": -4.8328
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "19:00"
+  },
+  "sameAs": [],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Talavera de la Reina"
+    }
+  ]
+}
+</script>  
 </head>
 
 <body>
@@ -32,20 +78,19 @@
         <div class="container header-container">
 
             <!-- LOGO COMPLETO (logo.png) -->
-            <a href="#inicio" class="brand" aria-label="Instalaciones Álvarez - Inicio">
+            <a href="index.html" class="brand" aria-label="Instalaciones Álvarez - Inicio">
                 <img src="./images/logo.png" alt="Instalaciones Álvarez" class="brand-logo">
             </a>
 
             <!-- NAVEGACIÓN DESKTOP -->
             <nav class="main-nav" aria-label="Navegación principal">
-                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#acceso-rapido" class="nav-link">Acceso rápido</a>
                 <a href="#servicios" class="nav-link">Servicios</a>
-                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#proceso" class="nav-link">Proceso</a>
+                <a href="#confianza" class="nav-link">Calidad</a>
+                <a href="#proyectos" class="nav-link">Aplicaciones</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </nav>
-
-            <!-- CTA DESKTOP -->
-            <a href="#contacto" class="header-cta">Solicitar presupuesto</a>
 
             <!-- BOTÓN MENÚ MÓVIL -->
             <button type="button" class="mobile-menu-button" id="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
@@ -57,9 +102,11 @@
         <!-- MENÚ MÓVIL -->
         <div class="mobile-menu" id="mobile-menu">
             <nav aria-label="Navegación móvil">
-                <a href="#inicio" class="mobile-nav-link">Inicio</a>
+                <a href="#acceso-rapido" class="mobile-nav-link">Acceso rápido</a>
                 <a href="#servicios" class="mobile-nav-link">Servicios</a>
-                <a href="#proyectos" class="mobile-nav-link">Proyectos</a>
+                <a href="#proceso" class="mobile-nav-link">Proceso</a>
+                <a href="#confianza" class="mobile-nav-link">Calidad</a>
+                <a href="#proyectos" class="mobile-nav-link">Aplicaciones</a>
                 <a href="#contacto" class="mobile-nav-link">Contacto</a>
                 <a href="#contacto" class="mobile-nav-cta">Solicitar presupuesto</a>
             </nav>
@@ -69,186 +116,278 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
 
-        <!-- HERO -->
-        <section class="hero-section" id="inicio">
-            <div class="hero-glow hero-glow-left"></div>
-            <div class="hero-glow hero-glow-right"></div>
-            <div class="hero-grid"></div>
-
-            <div class="hero-container">
-
-                <!-- CONTENIDO -->
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        INSTALADOR ELECTRICISTA AUTORIZADO
-                    </div>
-
-                    <h1 class="hero-title">
-                        La tranquilidad <br>
-                        de un trabajo <br>
-                        bien hecho.
-                    </h1>
-
-                    <span class="hero-speciality">
-                        Nuestra experiencia es tu tranquilidad
-                    </span>
-
-                    <p class="hero-description">
-                        Soluciones eléctricas para viviendas de nueva construccion, reformas y negocios. Instalaciones seguras, modernas y ejecutadas con el máximo rigor técnico.
-                    </p>
-
-                    <div class="hero-buttons">
-                        <a href="#contacto" class="button button-primary">
-                            Solicitar presupuesto
-                            <i data-lucide="arrow-right"></i>
-                        </a>
-                        <a href="#servicios" class="button button-secondary">
-                            Ver servicios
-                        </a>
-                    </div>
-
-                    <div class="hero-trust">
-                        <span class="trust-item">
-                            <i data-lucide="shield-check"></i>
-                            Seguridad y normativa
-                        
-                        <span class="trust-item">
-                            <i data-lucide="check-circle-2"></i>
-                            Trabajo limpio y preciso
-                        </span>
-                    </div>
+        <!-- HERO ESTILO TECH / BRUTALISTA CON COLORES DE MARCA -->
+        <section class="hero-brand">
+            <div class="hero-brand-container">
+                
+                <!-- ETIQUETA SUPERIOR CON LÍNEA Y TEXTO AMARILLO/LIMA -->
+                <div class="hero-eyebrow">
                 </div>
 
-                <!-- ELEMENTO VISUAL HERO -->
-                <div class="hero-visual">
-                    <div class="hero-cards-container">
+                <!-- TÍTULO PRINCIPAL EN MAYÚSCULAS -->
+                <h1 class="hero-giant-title">
+                    INSTALACIONES<br>
+                    HECHAS<br>
+                    <span class="text-yellow">CON CRITERIO.</span>
+                </h1>
 
-                        <div class="hero-card hero-card-sub">
-                            <div class="card-icon">
-                                <i data-lucide="zap"></i>
-                            </div>
-                            <div>
-                                <h4>Instalaciones Eléctricas</h4>
-                                <p>Obra nueva y reformas.</p>
-                            </div>
-                        </div>
+                <!-- SUBTÍTULO / UBICACIÓN -->
+                <p class="hero-subtext">
+                    Instalaciones eléctricas profesionales en Talavera de la Reina y alrededores.
+                </p>
 
-                        <div class="hero-card hero-card-sub">
-                            <div class="card-icon">
-                                <i data-lucide="lightbulb"></i>
-                            </div>
-                            <div>
-                                <h4>Iluminación Eficiente y Decorativa</h4>
-                                <p>Soluciones LED y diseño técnico.</p>
-                            </div>
-                        </div>
+                <!-- BOTONES PRINCIPALES EN AZUL CORPORATIVO Y NEGRO/OSCURO -->
+                <div class="hero-actions-grid">
+                    <a href="#contacto" class="btn-blue">SOLICITAR PRESUPUESTO</a>
+                    <a href="https://wa.me/34676995075" target="_blank" rel="noopener noreferrer" class="btn-outline">WHATSAPP</a>
+                </div>
 
-                        <div class="hero-card hero-card-sub">
-                            <div class="card-icon">
-                                <i data-lucide="battery-charging"></i>
-                            </div>
-                            <div>
-                                <h4>Cargadores VE</h4>
-                                <p>Puntos de recarga garantizados.</p>
-                            </div>
-                        </div>
-
-                        <div class="hero-card hero-card-sub">
-                            <div class="card-icon">
-                                <i data-lucide="wrench"></i>
-                            </div>
-                            <div>
-                                <h4>Mantenimiento</h4>
-                                <p>Asistencia técnica, averías y reparaciones.</p>
-                            </div>
-                        </div>
-
+                <!-- PÍLDORAS CON TICKS EN AMARILLO/LIMA Y FONDO DE TARJETA -->
+                <div class="hero-pills-grid">
+                    <div class="pill-item">
+                        <span class="check-mark">✓</span> Seguridad
+                    </div>
+                    <div class="pill-item">
+                        <span class="check-mark">✓</span> Precisión
+                    </div>
+                    <div class="pill-item">
+                        <span class="check-mark">✓</span> Trabajo limpio
+                    </div>
+                    <div class="pill-item">
+                        <span class="check-mark">✓</span> REBT
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- SERVICIOS -->
-        <section class="section services-section" id="servicios">
+        <!-- 1. SECCIÓN ACCESO RÁPIDO -->
+        <section class="section quick-access-section" id="acceso-rapido">
+            <div class="container">
+                <div class="quick-access-block">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">ACCESO RÁPIDO</span>
+                        <h2>¿QUÉ NECESITAS?</h2>
+                    </div>
+
+                    <div class="quick-access-grid">
+                        <a href="#contacto" class="quick-card">
+                            <div class="quick-icon-box"><i data-lucide="zap"></i></div>
+                            <div class="quick-card-content">
+                                <h3>AVERÍA</h3>
+                                <p>Diagnóstico y reparación según localización y complejidad.</p>
+                            </div>
+                        </a>
+
+                        <a href="#contacto" class="quick-card">
+                            <div class="quick-icon-box"><i data-lucide="home"></i></div>
+                            <div class="quick-card-content">
+                                <h3>REFORMA</h3>
+                                <p>Actualización eléctrica con planificación clara.</p>
+                            </div>
+                        </a>
+
+                        <a href="#contacto" class="quick-card">
+                            <div class="quick-icon-box"><i data-lucide="sparkles"></i></div>
+                            <div class="quick-card-content">
+                                <h3>INSTALACIÓN</h3>
+                                <p>Instalaciones seguras, limpias y verificadas.</p>
+                            </div>
+                        </a>
+
+                        <a href="#contacto" class="quick-card">
+                            <div class="quick-icon-box"><i data-lucide="lightbulb"></i></div>
+                            <div class="quick-card-content">
+                                <h3>ILUMINACIÓN</h3>
+                                <p>Soluciones funcionales y eficientes para cada espacio.</p>
+                            </div>
+                        </a>
+
+                        <a href="#contacto" class="quick-card">
+                            <div class="quick-icon-box"><i data-lucide="battery-charging"></i></div>
+                            <div class="quick-card-content">
+                                <h3>CARGADOR VE</h3>
+                                <p>Puntos de recarga para vehículo eléctrico.</p>
+                            </div>
+                        </a>
+
+                        <a href="#contacto" class="quick-card">
+                            <div class="quick-icon-box"><i data-lucide="file-check-2"></i></div>
+                            <div class="quick-card-content">
+                                <h3>BOLETÍN</h3>
+                                <p>Consulta para CIE y documentación eléctrica.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN SERVICIOS DETALLADOS -->
+        <section class="section services-wrapper-section" id="servicios">
+            <div class="container">
+                <div class="services-block">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">SERVICIOS</span>
+                        <h2>SERVICIOS DE <span class="text-yellow">ELECTRIC-A</span></h2>
+                        <p>Electricidad hecha con criterio: antes de actuar, informamos; cuando corresponde, presupuestamos; y al terminar, comprobamos.</p>
+                    </div>
+
+                    <div class="services-grid">
+                        <!-- 01 -->
+                        <div class="service-card">
+                            <span class="watermark-number">01</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="home"></i></div>
+                                <span class="card-number">01</span>
+                            </div>
+                            <h3>INSTALACIONES ELÉCTRICAS</h3>
+                            <p>Instalaciones diseñadas con seguridad, orden y cumplimiento del REBT.</p>
+                            <a href="#contacto" class="card-action">CONSULTAR &rarr;</a>
+                        </div>
+
+                        <!-- 02 -->
+                        <div class="service-card">
+                            <span class="watermark-number">02</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="zap"></i></div>
+                                <span class="card-number">02</span>
+                            </div>
+                            <h3>AVERÍAS Y REPARACIONES</h3>
+                            <p>Diagnóstico y reparación. El precio puede depender de la localización y complejidad.</p>
+                            <a href="#contacto" class="card-action">SOLICITAR DIAGNÓSTICO &rarr;</a>
+                        </div>
+
+                        <!-- 03 -->
+                        <div class="service-card">
+                            <span class="watermark-number">03</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="sliders"></i></div>
+                                <span class="card-number">03</span>
+                            </div>
+                            <h3>REFORMAS ELÉCTRICAS</h3>
+                            <p>Renovación de instalaciones para viviendas, locales y espacios en reforma.</p>
+                            <a href="#contacto" class="card-action">PLANIFICAR &rarr;</a>
+                        </div>
+
+                        <!-- 04 -->
+                        <div class="service-card">
+                            <span class="watermark-number">04</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="lightbulb"></i></div>
+                                <span class="card-number">04</span>
+                            </div>
+                            <h3>ILUMINACIÓN</h3>
+                            <p>Mejora de puntos de luz, eficiencia y distribución luminosa.</p>
+                            <a href="#contacto" class="card-action">VER SOLUCIÓN &rarr;</a>
+                        </div>
+
+                        <!-- 05 -->
+                        <div class="service-card">
+                            <span class="watermark-number">05</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="battery-charging"></i></div>
+                                <span class="card-number">05</span>
+                            </div>
+                            <h3>PUNTOS DE RECARGA VE</h3>
+                            <p>Instalación de puntos de recarga para vehículos eléctricos.</p>
+                            <a href="#contacto" class="card-action">SOLICITAR &rarr;</a>
+                        </div>
+
+                        <!-- 06 -->
+                        <div class="service-card">
+                            <span class="watermark-number">06</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="file-check-2"></i></div>
+                                <span class="card-number">06</span>
+                            </div>
+                            <h3>BOLETINES / CIE</h3>
+                            <p>Tramitación y revisión de documentación eléctrica cuando proceda.</p>
+                            <a href="#contacto" class="card-action">CONSULTAR &rarr;</a>
+                        </div>
+
+                        <!-- 07 -->
+                        <div class="service-card">
+                            <span class="watermark-number">07</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="building"></i></div>
+                                <span class="card-number">07</span>
+                            </div>
+                            <h3>OBRA NUEVA</h3>
+                            <p>Instalaciones eléctricas para obra nueva con ejecución ordenada.</p>
+                            <a href="#contacto" class="card-action">COORDINAR &rarr;</a>
+                        </div>
+
+                        <!-- 08 -->
+                        <div class="service-card">
+                            <span class="watermark-number">08</span>
+                            <div class="card-head">
+                                <div class="icon-box"><i data-lucide="users"></i></div>
+                                <span class="card-number">08</span>
+                            </div>
+                            <h3>COMUNIDADES</h3>
+                            <p>Actuaciones eléctricas en zonas comunes y espacios compartidos.</p>
+                            <a href="#contacto" class="card-action">CONTACTAR &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PROCESO Y SOLUCIONES -->
+        <section class="section process-solutions-section" id="proceso">
             <div class="container">
 
-                <div class="section-heading">
-                    <span class="section-eyebrow">Servicios</span>
-                    <h2>Soluciones eléctricas pensadas para durar.</h2>
-                    <p>Desde una instalación completa hasta una mejora puntual. Cada trabajo se plantea buscando seguridad, funcionalidad y un acabado profesional.</p>
+                <!-- 1. BLOQUE PROCESO / ASÍ TRABAJAMOS -->
+                <div class="process-block">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">PROCESO</span>
+                        <h2>ASÍ TRABAJAMOS</h2>
+                    </div>
+
+                    <div class="process-timeline">
+                        <div class="process-step">
+                            <div class="step-badge">01</div>
+                            <div class="step-card">
+                                <h3>NOS CUENTAS QUÉ NECESITAS</h3>
+                                <p>Recibimos la información principal y, si ayuda, fotografías del trabajo.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-badge">02</div>
+                            <div class="step-card">
+                                <h3>ANALIZAMOS EL TRABAJO</h3>
+                                <p>Valoramos alcance, ubicación, materiales y posibles condicionantes.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-badge">03</div>
+                            <div class="step-card">
+                                <h3>RECIBES EL PRESUPUESTO</h3>
+                                <p>Cuando corresponde, te indicamos una propuesta clara antes de actuar.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-badge">04</div>
+                            <div class="step-card">
+                                <h3>EJECUTAMOS</h3>
+                                <p>Realizamos el trabajo con orden, seguridad y comunicación directa.</p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="step-badge">05</div>
+                            <div class="step-card">
+                                <h3>COMPROBAMOS</h3>
+                                <p>Verificamos el resultado y resolvemos dudas antes de cerrar el trabajo.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="services-grid">
-
-                    <!-- SERVICIO 01 -->
-                    <article class="service-card">
-                        <span class="service-number">01</span>
-                        <div class="service-icon"><i data-lucide="zap"></i></div>
-                        <h3>Instalaciones eléctricas</h3>
-                        <p>Instalaciones nuevas, ampliaciones, cuadros eléctricos, sustitución de mecanismos, averías y actualización de sistemas existentes.</p>
-                        <a href="#contacto" class="service-link">
-                            Solicitar información <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- SERVICIO 02 -->
-                    <article class="service-card">
-                        <span class="service-number">02</span>
-                        <div class="service-icon"><i data-lucide="lightbulb"></i></div>
-                        <h3>Iluminación</h3>
-                        <p>Diseño y ejecución de soluciones de iluminación funcionales, decorativas y de alta eficiencia energética para viviendas y locales.</p>
-                        <a href="#contacto" class="service-link">
-                            Mejorar mi iluminación <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- SERVICIO 03 -->
-                    <article class="service-card">
-                        <span class="service-number">03</span>
-                        <div class="service-icon"><i data-lucide="battery-charging"></i></div>
-                        <h3>Cargadores para vehículo eléctrico</h3>
-                        <p>Instalación de puntos de recarga para vehículos eléctricos, adaptados a las características técnicas de cada garaje o negocio. Tambien en garajes comunitarios</p>
-                        <a href="#contacto" class="service-link">
-                            Solicitar presupuesto <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- SERVICIO 04 -->
-                    <article class="service-card">
-                        <span class="service-number">04</span>
-                        <div class="service-icon"><i data-lucide="file-check-2"></i></div>
-                        <h3>Boletines y legalizaciones</h3>
-                        <p>Tramitación de boletines eléctricos (CIE) y documentación técnica necesaria para nuevos aumentos de potencia o reformas.</p>
-                        <a href="#contacto" class="service-link">
-                            Consultar mi caso <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- SERVICIO 05 -->
-                    <article class="service-card">
-                        <span class="service-number">05</span>
-                        <div class="service-icon"><i data-lucide="construction"></i></div>
-                        <h3>Reformas eléctricas</h3>
-                        <p>Renovación integral de sistemas eléctricos en viviendas, locales comerciales y oficinas, adaptados a la normativa vigente.</p>
-                        <a href="#contacto" class="service-link">
-                            Hablar del proyecto <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                    <!-- SERVICIO 06 -->
-                    <article class="service-card">
-                        <span class="service-number">06</span>
-                        <div class="service-icon"><i data-lucide="shield-alert"></i></div>
-                        <h3>Mantenimiento y Reparaciones</h3>
-                        <p>Localización de averías, mantenimiento preventivo y reparación de fallos eléctricos para mantener tus instalaciones siempre operativas.</p>
-                        <a href="#contacto" class="service-link">
-                            Solicitar asistencia <i data-lucide="arrow-up-right"></i>
-                        </a>
-                    </article>
-
-                </div>
             </div>
         </section>
 
@@ -258,7 +397,7 @@
 
                 <div class="trust-content">
                     <span class="section-eyebrow">La diferencia está en cómo se trabaja</span>
-                    <h2>No se trata solo de instalar. Se trata de hacerlo bien.</h2>
+                    <h2>No se trata solo de instalar. Se trata de hacerlo <span class="text-yellow"> bien.</span></h2>
                     <p>Una instalación eléctrica debe garantizar seguridad hoy y estar preparada para las demandas del mañana. Combinamos el cumplimiento estricto de la normativa con acabados impecables, garantizando un servicio limpio, eficiente y diseñado para durar..</p>
 
                     <div class="trust-list">
@@ -299,16 +438,16 @@
                 <!-- BLOQUE DESTACADO -->
                 <div class="trust-highlight">
                     <div class="highlight-card">
-    <!-- LOGO AÑADIDO -->
-    <img src="images/logo.png" alt="Electric-A Logo" class="highlight-logo">
+                        <!-- LOGO AÑADIDO -->
+                        <img src="images/logo.png" alt="Electric-A Logo" class="highlight-logo">
 
-    <span class="highlight-author">JAIRO ÁLVAREZ</span>
-    <strong>INSTALADOR AUTORIZADO</strong>
-    <span class="highlight-small">ELECTRICIDAD E ILUMINACIÓN</span>
-    <p class="highlight-main">Garantía de calidad profesional.</p>
-    <div class="highlight-line"></div>
-    <p class="highlight-bottom">Seguridad, eficiencia y precisión aplicadas a cada proyecto.</p>
-</div>
+                        <span class="highlight-author">JAIRO ÁLVAREZ</span>
+                        <strong>INSTALADOR AUTORIZADO</strong>
+                        <span class="highlight-small"></span>
+                        <p class="highlight-main">Garantía de calidad profesional.</p>
+                        <div class="highlight-line"></div>
+                        <p class="highlight-bottom">Seguridad, eficiencia y precisión aplicadas a cada proyecto.</p>
+                    </div>
                 </div>
 
             </div>
@@ -320,7 +459,7 @@
 
                 <div class="projects-heading">
                     <div class="projects-heading-main">
-                        <span class="section-eyebrow">PROYECTOS Y TRABAJOS</span>
+                        <span class="section-eyebrow">SOLUCIONES ELECTRIC-A</span>
                         <h2>Soluciones que <span>funcionan.</span></h2>
                     </div>
 
@@ -332,7 +471,7 @@
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="./images/proyecto-1.jpg" alt="Instalación en vivienda">
+                            <img src="./images/proyecto-1.jpg" alt="Instalacion en talavera de la reina" loading="lazy">
                         </div>
                         <div class="project-info">
                             <h3>Reforma Eléctrica Integral</h3>
@@ -342,7 +481,7 @@
 
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="./images/proyecto-2.jpg" alt="Iluminación comercial">
+                            <img src="./images/proyecto-2.jpg" alt="Iluminación comercial" loading="lazy">
                         </div>
                         <div class="project-info">
                             <h3>Iluminación Comercial</h3>
@@ -352,7 +491,7 @@
 
                     <article class="project-card">
                         <div class="project-image">
-                            <img src="./images/proyecto-3.jpg" alt="Punto de recarga vehículo eléctrico">
+                            <img src="./images/proyecto-3.jpg" alt="Punto de recarga vehículo eléctrico" loading="lazy">
                         </div>
                         <div class="project-info">
                             <h3>Punto de Recarga VE</h3>
@@ -365,83 +504,96 @@
         </section>
 
         <!-- CONTACTO -->
-        <section class="contact-section section" id="contacto">
+        <section class="section contact-section" id="contacto">
             <div class="container">
-    <div class="contact-wrapper">
-        <div class="contact-info">
-            <span class="section-eyebrow">CONTACTO</span>
-            <h2>¿Tienes un proyecto en mente?</h2>
-            <p>Ponte en contacto para solicitar tu presupuesto sin compromiso o resolver cualquier duda técnica sobre tus instalaciones.</p>
-            
-            <div class="contact-details">
-    <!-- FILA 1: LLAMAR -->
-    <div class="contact-item">
-        <a href="tel:+34676995075" class="btn-action" title="Llamar por teléfono">
-            <i data-lucide="phone-call"></i>
-            <span>Llamar</span>
-        </a>
-        <a href="tel:+34676995075" class="contact-link">+34 676 995 075</a>
-    </div>
 
-    <!-- FILA 2: WHATSAPP -->
-    <div class="contact-item">
-        <a href="https://wa.me/34676995075" target="_blank" rel="noopener noreferrer" class="btn-action" title="Enviar WhatsApp">
-            <i data-lucide="message-square"></i>
-            <span>WhatsApp</span>
-        </a>
-        <a href="https://wa.me/34676995075" target="_blank" rel="noopener noreferrer" class="contact-link">+34 676 995 075</a>
-    </div>
+                <!-- BLOQUE CONTACTO DIRECTO -->
+                <div class="contact-box">
+                    <div class="contact-box-text">
+                        <span class="section-eyebrow">CONTACTO</span>
+                        <h2>¿HABLAMOS?</h2>
+                        <p>Cuéntanos qué necesitas y estudiaremos la mejor forma de ayudarte.</p>
+                    </div>
+                    <div class="contact-buttons-grid">
+                        <a href="tel:+34676995075" class="contact-btn btn-call">LLAMAR</a>
+                        <a href="https://wa.me/34676995075" target="_blank" rel="noopener noreferrer" class="contact-btn">WHATSAPP</a>
+                        <a href="https://t.me/+34676995075" target="_blank" rel="noopener noreferrer" class="contact-btn">TELEGRAM</a>
+                        <a href="mailto:info@instalacionesalvarez.com" class="contact-btn">EMAIL</a>
+                    </div>
+                </div>
 
-    <!-- FILA 3: TELEGRAM -->
-    <div class="contact-item">
-        <a href="https://t.me/+34676995075" target="_blank" rel="noopener noreferrer" class="btn-action" title="Enviar Telegram">
-            <i data-lucide="send"></i>
-            <span>Telegram</span>
-        </a>
-        <a href="https://t.me/+34676995075" target="_blank" rel="noopener noreferrer" class="contact-link">+34 676 995 075</a>
-    </div>
+                <hr class="section-divider">
 
-    <!-- FILA 4: CORREO ELECTRÓNICO -->
-<div class="contact-item">
-    <a href="mailto:info@instalacionesalvarez.com" class="btn-action" title="Escribir correo">
-        <i data-lucide="mail"></i>
-        <span>Escribir</span>
-    </a>
-    <a href="mailto:info@instalacionesalvarez.com" class="contact-link">info@instalacionesalvarez.com</a>
-</div>
-</div>
-        </div>
+                <!-- BLOQUE FORMULARIO PRESUPUESTO -->
+                <div class="budget-block">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">PRESUPUESTO</span>
+                        <h2>SOLICITA TU PRESUPUESTO</h2>
+                    </div>
 
-        <form class="contact-form" action="#" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                    <form class="budget-form" action="#" method="POST" enctype="multipart/form-data">
+                        <div class="form-grid">
+                            
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tipo-servicio">Tipo de servicio</label>
+                                <select id="tipo-servicio" name="tipo_servicio" required>
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="instalacion">Instalación eléctrica</option>
+                                    <option value="averia">Avería / Reparación</option>
+                                    <option value="reforma">Reforma eléctrica</option>
+                                    <option value="iluminacion">Iluminación</option>
+                                    <option value="cargador-ve">Cargador Vehículo Eléctrico</option>
+                                    <option value="boletin">Boletín / CIE</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="localidad">Localidad</label>
+                                <input type="text" id="localidad" name="localidad">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fotos">Adjuntar fotografías</label>
+                                <input type="file" id="fotos" name="fotos" accept="image/jpeg, image/png, image/jpg" multiple>
+                                <span class="form-help">Puedes adjuntar imágenes para valorar mejor el trabajo.</span>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="descripcion">Descripción</label>
+                                <textarea id="descripcion" name="descripcion" rows="4" placeholder="Cuéntanos qué necesitas" required></textarea>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" class="submit-btn">ENVIAR SOLICITUD</button>
+                    </form>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required placeholder="tu@email.com">
-            </div>
-            <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" required placeholder="123 456 789">
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje o detalles de la consulta</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Describe tu proyecto o necesidad..."></textarea>
-            </div>
-            <button type="submit" class="button button-primary">Enviar mensaje</button>
-        </form>
-    </div>
-</div>
         </section>
-
     </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container footer-container">
             <div class="footer-brand">
-                <img src="../images/logo2.png" alt="Instalaciones Álvarez" class="footer-logo-symbol">
+                <img src="./images/logo2.png" alt="Instalaciones Álvarez" class="footer-logo-symbol">
                 <p>&copy; 2026 Instalaciones Álvarez. Todos los derechos reservados.</p>
             </div>
             <div class="footer-links">
@@ -452,7 +604,7 @@
     </footer>
 
     <!-- Scripts externos -->
-    <script src="../js/script.js"></script>
+    <script src="./js/script.js"></script>
     <script>
         lucide.createIcons();
     </script>
